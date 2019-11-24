@@ -72,10 +72,22 @@ puf
 read clipboard
 </button>
 -->
-<label style="margin-top:1em">Copy and Share the meeting URL with the viewers</label>
+<label style="margin-top:1em">
+  <Social mysockid={mysockid} loc={loc} >Share</Social>
+  the meeting URL with the viewers
+</label>
+
+
+
 
 <div>
   <a href="{loc}?room={mysockid}" target="_blank">{loc}?room={mysockid}</a>
+
+  <button class="btn btn-lite" type="button"
+    on:click={cp2kb} use:puf={{text:'Copied to clipboard'}} >
+      Copy link
+  </button>
+<!--
   <svg use:puf={{text:'Copied to clipboard'}} style="width:1em; cursor: pointer;enable-background:new 0 0 460 460;" title="Copy to clipboard" 
   on:click={cp2kb} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     viewBox="0 0 460 460" xml:space="preserve">
@@ -93,6 +105,8 @@ read clipboard
     </g>
   </g>
   </svg>
+  -->
+
 </div>
 
 <style>
@@ -113,6 +127,7 @@ video{
 </style>
 <script>
 import {puf} from './puf.js'
+import Social from './Social.svelte'
 export let mysockid = null
 export let stream = null;
 window.stream=stream; // Privremeno
