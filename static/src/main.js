@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 let peers = {};
 window.peers = peers;
 //var socket = window.socket = io.connect('https://thescreenshare.com/');
-var socket = window.socket = io.connect('http://localhost:8764');
+var socket = window.socket = io.connect();
 
 socket.on('connect', function (data) {
     app.$set({'mysockid':socket.id})
