@@ -18,8 +18,9 @@ export let broadcasterSockId
 export let mysockid
 let video_el
 //$:console.log('ScreenSubscribe broadcasterSockId', broadcasterSockId)
-
-socket.emit('initP2PWith', broadcasterSockId);
-initP2PWith(broadcasterSockId, false);
+window.sock_ready.then(()=>{
+  socket.emit('initP2PWith', broadcasterSockId);
+  initP2PWith(broadcasterSockId, false);
+})
 
 </script>

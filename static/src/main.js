@@ -5,9 +5,20 @@ let peers = {};
 window.peers = peers;
 //var socket = window.socket = io.connect('https://thescreenshare.com/');
 var socket = window.socket = io.connect();
+var NAME
+let sock_ready_resolve
+window.sock_ready = new Promise(function(resolve, reject) {
+  sock_ready_resolve = resolve
+  //setTimeout(() => resolve("done!"), 1000);
+});
 
 socket.on('connect', function (data) {
-    app.$set({'mysockid':socket.id})
+  socket.emit('auth', NAME, function(name){
+    NAME = name
+    app.$set({'mysockid':name})
+    sock_ready_resolve('done')
+  })
+    //app.$set({'mysockid':socket.id})
 });
 
 socket.on('signal', function (d) {// data, from
@@ -127,7 +138,6 @@ const app = new App({
   target: document.body,
   accessors: true, 
 	props: {
-   // name: 'world'
      mysockid:null
 	}
 });

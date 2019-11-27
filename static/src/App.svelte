@@ -1,6 +1,6 @@
 <script>
   export let mysockid
-  $:console.log(`mysockid = ${mysockid}`)
+//  $:console.log(`mysockid = ${mysockid}`)
   import page from 'page'
   window.page = page
   import ScreenPublish from './ScreenPublish.svelte'
