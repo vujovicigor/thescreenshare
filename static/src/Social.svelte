@@ -54,6 +54,12 @@
     Gmail
     </a> 
 
+    <a class="dropdown-item" target="_blank" 
+    href="whatsapp://send?text={title}: {url}">
+    <img style="height: 2rem;" src="social-share-urls/images/logo-icons-opaque-background/whatsapp.png" alt="Whatsapp">
+    Whatsapp
+    </a> 
+
   </div>
 </div>
 <script>
