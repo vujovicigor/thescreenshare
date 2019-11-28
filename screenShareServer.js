@@ -16,6 +16,10 @@ console.log('listening at 8764')
 // Serve static
 app.use(express.static('static/public'))
 
+app.get('*', function(req, res) {
+  res.sendFile(__dirname + '/static/public/index.html');
+});
+
 // P2P signaling server
 io.on('connection', function (socket) {
 

@@ -81,7 +81,7 @@ read clipboard
 
 
 <div>
-  <a href="{loc}?room={mysockid}" target="_blank">{loc}?room={mysockid}</a>
+  <a href="{loc}{mysockid}" target="_blank">{loc}{mysockid}</a>
 
   <button class="btn btn-lite" type="button"
     on:click={cp2kb} use:puf={{text:'Copied to clipboard'}} >
@@ -136,7 +136,7 @@ let videoIsPlaying = false
 let loc = document.location.href
 
 function cp2kb(){
-  var link = loc + '?room=' + mysockid
+  var link = loc + '' + mysockid
   navigator.clipboard.writeText(link)
 }
 

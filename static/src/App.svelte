@@ -17,7 +17,8 @@
   page('/:broadcasterSockId', fnScreenSubscribe)
   page({hashbang:false})
 */
-  var broadcasterSockId = document.location.search.split('=').pop();
+//  var broadcasterSockId = document.location.search.split('=').pop();
+  var broadcasterSockId = document.location.pathname.split('/').pop();
   if (broadcasterSockId) fnScreenSubscribe(broadcasterSockId)
   else 
     index();
