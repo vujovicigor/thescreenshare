@@ -69,6 +69,6 @@ export let title = 'My screen share url'
 export let user_id 
 export let hash_tags
 
-$:url = encodeURIComponent(`${loc}?room=${mysockid}`)
+$:url = encodeURIComponent(`${loc}${mysockid}`)
 
 </script>
