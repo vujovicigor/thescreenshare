@@ -47,7 +47,9 @@ window.initP2PWith = function (remoteSockId, initiator){
         config: {
             //iceTransportPolicy: 'relay',
             iceServers: [
-                {"urls":"turn:159.89.1.251:3478", "username":"test", "credential":"test", "credentialType": "password"},
+              {"urls":"turn:159.89.1.251:3478", "username":"test", "credential":"test", "credentialType": "password"},
+              {"urls":"turn:194.99.20.130:3478", "username":"test", "credential":"test", "credentialType": "password"},
+              
                 {"urls":"stun:stun.sipgate.net"},
                 {"urls":"stun:217.10.68.152"},
                 {"urls":"stun:stun.sipgate.net:10000"},
